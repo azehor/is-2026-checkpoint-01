@@ -34,6 +34,17 @@ def health():
     return response, 200
 
 
+#Endpoint para la metada
+@app.route('/api/info', methods=['GET'])
+def info():
+    response = jsonify({
+        "service": "backend-api",
+        "tech": "Python 3.12-slim + Flask",
+        "feature": "03 - Backend Implementation"
+    })
+    return response, 200
+
+
 if __name__ == '__main__':
     #La api escucha el puerto 5000
     app.run(host='0.0.0.0', port=5000)
