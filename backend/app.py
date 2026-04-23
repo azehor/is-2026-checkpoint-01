@@ -56,7 +56,7 @@ def get_team():
         bd_response = cursor.fetchall()
 
         team = [
-            {"nombre": member[0], "apellido": member[1], "legajo": member[2], "feature": member[3]}
+            {"nombre": member[0], "apellido": member[1], "legajo": member[2], "feature": member[3], "estado": member[4]}
             for member in bd_response
         ]
 
