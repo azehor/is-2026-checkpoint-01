@@ -35,6 +35,7 @@ def health():
 
 
 #Endpoint para la metada
+
 @app.route('/api/info', methods=['GET'])
 def info():
     response = jsonify({
@@ -43,6 +44,36 @@ def info():
         "feature": "03 - Backend Implementation"
     })
     return response, 200
+
+
+#Endpoint para la lista de miembros de la BD
+
+@app.route('/api/team', methods=['GET'])
+def get_team():
+    try:
+        connection = db_connection()
+        cursor.execute('SELECT nombre, apellido, legajo, feature FROM members;')
+        bd_response = cursor.fetchall()
+
+        team = [
+            {"nombre": member[0], "apellido": member[1], "legajo": member[2], "feature": member[3]}
+            for member in bd_response
+        ]
+
+        cursor.close()
+        connection.close()
+        
+        response = jsonify(team)
+
+        return response, 200
+
+    except Exception as error:
+        response = jsonify({
+            "error": "Error de conexion a la base de datos",
+            "details": str(error)
+        })
+        return response, 500
+
 
 
 if __name__ == '__main__':
