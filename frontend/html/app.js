@@ -19,6 +19,7 @@ async function fetchTeamData() {
 			const columnas = ` 
 				<tr>
 					<td>${integrante.nombre}</td>
+					<td>${integrante.apellido}</td>
 					<td>${integrante.legajo}</td>
 					<td>${integrante.feature}</td>
 					<td>${integrante.servicio}</td>
