@@ -52,11 +52,12 @@ def info():
 def get_team():
     try:
         connection = db_connection()
-        cursor.execute('SELECT nombre, apellido, legajo, feature FROM members;')
+        cursor = connection.cursor()
+        cursor.execute('SELECT nombre, apellido, legajo, feature, estado, servicio FROM members;')
         bd_response = cursor.fetchall()
 
         team = [
-            {"nombre": member[0], "apellido": member[1], "legajo": member[2], "feature": member[3], "estado": member[4]}
+                {"nombre": member[0], "apellido": member[1], "legajo": member[2], "feature": member[3], "estado": member[4], "servicio": member[5]}
             for member in bd_response
         ]
 
