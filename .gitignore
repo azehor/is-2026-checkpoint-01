@@ -1,1 +1,13 @@
-.env
+# Ignora .env y variaciones, salvo .env.example
+.env*
+!.env.example
+
+# Ignora artefactos de python en el frontend y backend
+frontend/__pycache__
+frontend/*.pyc
+backend/__pycache__
+backend/*.pyc
+
+# Ignora volumen de la base de datos
+db_data/
+
