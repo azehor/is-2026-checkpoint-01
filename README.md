@@ -3,7 +3,7 @@
 - Juan Ignacio Piazza
 - Ignacio Williams
 - Nahuel Fabián Fredes Coronilla
-- Avril Lugo Gonzales
+- Avril Lugo Gonzalez
 - Alfredo Echeverría
 
 ## Instrucciones de uso:
