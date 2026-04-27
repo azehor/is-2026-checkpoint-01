@@ -37,6 +37,8 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
+    mem_limit: 512m
+    cpus: 0.5
 
   portainer:
     image: portainer/portainer-ce:latest
